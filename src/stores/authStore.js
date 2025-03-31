@@ -31,7 +31,7 @@ export const useAuthStore = defineStore({
     },
     async getAuthStatus($api) {
       try {
-        await $api.head("/api/v2/config/main");
+        await $api.head(import.meta.env.VITE_CALDERA_API_URL + "api/v2/config/main");
         return true;
       } catch (error) {
         return false;

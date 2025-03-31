@@ -15,6 +15,7 @@ import "floating-vue/dist/style.css";
 const app = createApp(App);
 // Set default API url
 const $api = axios.create({
+  baseURL: import.meta.env.VITE_CALDERA_API_URL || window.location.origin + "/api/",
   withCredentials: true,
 });
 app.provide("$api", $api);
